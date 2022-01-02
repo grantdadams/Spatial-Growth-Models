@@ -1,4 +1,4 @@
-load("3_vbgf_model_progression2018_04_01.RData")
+load("VBGF_Stan_models_2018_04_01.RData")
 library(rstan)
 library(loo)
 

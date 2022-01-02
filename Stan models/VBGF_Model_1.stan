@@ -47,3 +47,8 @@ model {
   // 3.3.2. -- Model likelihood
   log_length_i ~ normal( log_linf_i + log1m_exp(-k_i .* (age_i - t0_i)), sigma);
 }
+generated quantities {
+  vector[n_i] log_lik;
+  for(i in 1:n_i)
+  log_lik[i] = normal_lpdf(log_length_i[i] | (design_mat[i,] * B_log_linf) + log1m_exp(-exp(design_mat[i,] * B_log_k) .* (age_i[i] - (design_mat[i,] * B_t0))), sigma);
+}

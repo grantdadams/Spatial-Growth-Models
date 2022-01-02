@@ -43,3 +43,8 @@ model {
   // 3.3.2. -- Model likelihood
   log_weight_i ~ normal(log_a_i + log_length_i .* b_i, sigma);
 }
+generated quantities {
+  vector[n_i] log_lik;
+  for(i in 1:n_i)
+  log_lik[i] = normal_lpdf(log_weight_i[i] | (design_mat[i,] * B_log_a) + log_length_i[i] * exp(design_mat[i,] * B_log_b), sigma);
+}

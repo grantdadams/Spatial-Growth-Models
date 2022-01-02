@@ -2,22 +2,29 @@ library(loo)
 library(rstan)
 
 # load models
-load("StanFitPredlog_2018_03_31.RData")
-load("StanFitLatRElog_short_2018_03_31.RData")
-load("StanFitCARlog_short_2018_04_02.RData")
+load("WAL_Stan_models_2018_03_31.RData")
 
-loglike1 <- extract_log_lik(StanFitPred)
-loglike2 <- extract_log_lik(StanFitLatRElog)
-loglike3 <- extract_log_lik(StanFitLatCAR)
+library(rstan)
+library(loo)
 
-loo1 <- loo(loglike1)
-loo2 <- loo(loglike2)
-loo3 <- loo(loglike3)
+log_lik1 <- extract_log_lik(mod_list[[1]])
+log_lik2 <- extract_log_lik(mod_list[[2]])
+log_lik3 <- extract_log_lik(mod_list[[3]])
 
-compare(loo1, loo2)
-compare(loo2, loo3)
 
-waic1 <- waic(loglike1)
-waic2 <- waic(loglike2)
-waic3 <- waic(loglike3)
+loo1 <- loo(log_lik1)
+loo2 <- loo(log_lik2)
+loo3 <- loo(log_lik3)
 
+
+diff1 <- compare(loo1, loo2)
+diff2 <- compare(loo2, loo3)
+diff3 <- compare(loo1, loo3)
+
+diff1
+diff2
+diff3
+
+waic(log_lik1)
+waic(log_lik2)
+waic(log_lik3)

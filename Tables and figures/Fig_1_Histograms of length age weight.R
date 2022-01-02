@@ -1,7 +1,7 @@
 
 
 
-source("VGBM Data Prep/VGBM_Data_Prep.R")
+source("Data/Data prep/VBGM_Data_prep.R")
 state.id <- data.frame(state = c("VA Ocean","VA Bay","NC","SC","FL Atlantic","FL Gulf","AL","MS","LA","TX"), state_no = c(1:length(unique(dat$state))))
 library(FSA)
 
@@ -112,7 +112,7 @@ for ( j in 1:18){
 dev.off()
 
 
-source("Weight_at_length_data_prep.R")
+source("Data/Data prep/WAL_Data_prep.R")
 
 
 tiff(file="von Bertalanffy/Figures/Histogram_of_weights2.tiff" , height= 10, pointsize=18,  width=7 , res=300  , units = "in", family = "serif")

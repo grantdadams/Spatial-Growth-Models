@@ -29,7 +29,7 @@ design_mat <- matrix(c(rep(1, length(dat$sex)), dat$sex, (dat$Lat - min(dat$Lat)
 
 dataList = list(
   n_i = nrow(dat), # Sample size
-  J = 9, # Number of regions
+  n_r = 9, # Number of regions
   n_pred = ncol(design_mat), # Number of predictors
   log_length_i = log(dat$FL_mm), # Vector of log fork length of fish i
   log_weight_i = log(dat$wet_weight_grams), # Vector of age of fish i
@@ -58,7 +58,7 @@ StanFitLatCAR <- stan('Stan models/WAL_Model_3.stan', data = dataList, iter = 50
 
  ##### SAVE MODEL LIST #####
 mod_list <- list(StanFitPred, StanFitLatRE, StanFitLatCAR)
-file_name <- paste("Stan models/Models/WAL_Stan_models",gsub("-","_",as.Date(trunc(Sys.time(),"day"))),".RData", sep = "")
+file_name <- paste("Stan models/Models/WAL_Stan_models_",gsub("-","_",as.Date(trunc(Sys.time(),"day"))),".RData", sep = "")
 save(mod_list, file = file_name)
 
 
