@@ -18,10 +18,10 @@ options(mc.cores = parallel::detectCores() - 1)
 source("Data/Data prep/WAL_Data_prep.R")
 
 # Make neighbor matrix
-Neighbor_Mat <- matrix(0, nrow = 9, ncol = 9)
-for(i in 1:ncol(Neighbor_Mat)){
-  Neighbor_Mat[i,i+1] <- 1
-  Neighbor_Mat[i+1,i] <- 1
+neighbor_mat <- matrix(0, nrow = 9, ncol = 9)
+for(i in 1:ncol(neighbor_mat)){
+  neighbor_mat[i,i+1] <- 1
+  neighbor_mat[i+1,i] <- 1
 }
 
 # put into a list to pass to Stand
@@ -47,13 +47,13 @@ nChains = 1
 
 
 ##### RUN THE BASE MODEL IN STAN WITH PREDICTORS #####
-StanFitPred <- stan('Stan models/wal_base_w_predictors_log_linear.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
+StanFitPred <- stan('Stan models/WAL_Model_1.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 ##### RUN THE MODEL IN STAN WITH LAT AND RANDOM EFFECTS #####
-StanFitLatRE <- stan('Stan models/WAL_Model_1.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
+StanFitLatRE <- stan('Stan models/WAL_Model_2.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 ##### RUN THE MODEL IN STAN WITH LAT AND SPARSE CAR RANDOM EFFECTS #####
-StanFitLatCAR <- stan('Stan models/WAL_Model_3.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
+StanFitLatCAR <- stan('Stan models/WAL_Model_3.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 
  ##### SAVE MODEL LIST #####

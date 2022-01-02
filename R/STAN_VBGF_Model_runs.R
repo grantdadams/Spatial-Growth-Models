@@ -47,14 +47,13 @@ thin = 5
 nChains = 1
 
 ##### RUN THE BASE MODEL IN STAN WITH LAT #####
-StanFitLat <- stan('Stan models/VBGF_Model_1.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
-loo_1 <- loo(extract_log_lik(StanFitLat))
+StanFitLat <- stan('Stan models/VBGF_Model_1.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 ##### RUN THE MODEL IN STAN WITH LAT AND RANDOM EFFECTS #####
-StanFitLatRE <- stan('Stan models/VBGF_Model_2.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
+StanFitLatRE <- stan('Stan models/VBGF_Model_2.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 ##### RUN THE MODEL IN STAN WITH LAT AND SPARSE CAR RANDOM EFFECTS #####
-StanFitLatCAR <- stan('Stan models/VBGF_Model_3.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = FALSE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
+StanFitLatCAR <- stan('Stan models/VBGF_Model_3.stan', data = dataList, iter = 5000, chains = 2, cores = 2, verbose = TRUE, warmup = 1000, control = list(max_treedepth = 14, adapt_delta = 0.9))
 
 ##### SAVE #####
 mod_list <- list(StanFitLat, StanFitLatRE, StanFitLatCAR)
