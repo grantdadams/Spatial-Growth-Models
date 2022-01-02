@@ -1,0 +1,65 @@
+data {
+  int<lower = 1> n;
+  int<lower = 1> J;
+  real y[n];
+  real age[n];
+  int<lower = 0> region[n];
+  matrix<lower = 0, upper = 1>[J, J] W;
+}
+transformed data{
+  vector[J] zeros;
+  matrix<lower = 0>[J, J] D;
+  {
+    vector[J] W_rowsums;
+    for (i in 1:J) {
+      W_rowsums[J] = sum(W[J, ]);
+    }
+    D = diag_matrix(W_rowsums);
+  }
+  zeros = rep_vector(0, J);
+}
+parameters {
+  vector[J] log_linf_re;
+  vector[J] log_k_re;
+  vector[J] log_t0_re;
+
+  real mu_log_Linf ;
+  real mu_log_k ;
+  real mu_log_t0 ;
+
+  real<lower=0> sigma;
+
+  real<lower = 0> tau_linf;
+  real<lower = 0> tau_k;
+  real<lower = 0> tau_t0;
+
+  real<lower = 0, upper = 1> alpha_linf;
+  real<lower = 0, upper = 1> alpha_k;
+  real<lower = 0, upper = 1> alpha_t0;
+}
+transformed parameters{
+  vector[J] linf;
+  vector[J] k;
+  vector[J] t0;
+
+  linf = exp(log_linf_re + mu_log_Linf);
+  k = exp(log_k_re + mu_log_k);
+  t0 = exp(log_t0_re + mu_log_t0) - 10;
+}
+model {
+  log_linf_re ~ multi_normal_prec(zeros, tau_linf * (D - alpha_linf * W));
+  log_k_re ~ multi_normal_prec(zeros, tau_k * (D - alpha_k * W));
+  log_t0_re ~ multi_normal_prec(zeros, tau_t0 * (D - alpha_t0 * W));
+
+  tau_linf ~ gamma(2, 2);
+  tau_k ~ gamma(2, 2);
+  tau_t0 ~ gamma(2, 2);
+
+  mu_log_Linf ~ normal(0,10);
+  mu_log_k ~ normal(0,10);
+  mu_log_t0 ~ normal(0,10);
+  
+  for(i in 1:n)
+  y[i] ~ normal(linf[region[i]] * (1- exp( -k[region[i]]* (age[i] - t0[region[i]] ))), sigma);
+}
+

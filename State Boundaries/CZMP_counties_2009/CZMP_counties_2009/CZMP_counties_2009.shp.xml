@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>Stephen R. Hartwell</origin>
+<origin>Dana K. Wingfield</origin>
+<origin>Alan O. Allwardt</origin>
+<origin>Florence L. Wong</origin>
+<origin>Frances L. Lightsom</origin>
+<pubdate>2013</pubdate>
+<title>Shapefile for Coastal Zone Management Program counties of the United States and its territories, 2009 (CZMP_counties_2009.shp)</title>
+<edition>version 1</edition>
+<geoform>vector digital data</geoform>
+<pubinfo>
+<pubplace>Reston, VA</pubplace>
+<publish>U.S. Geological Survey</publish>
+</pubinfo>
+<onlink>&lt;http://pubs.usgs.gov/of/2013/1284/&gt;</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>
+Shapefile for 492 Coastal Zone Management Program (CZMP) counties and county equivalents, 2009, extracted from the U.S. Census Bureau's MAF/TIGER database of U.S. counties and cross-referenced to a list of CZMP counties published by the NOAA/NOS Office of Ocean and Coastal Resource Management (OCRM). Data extent to the nearest quarter degree is 141.00 E to 64.50 W longitude and 14.75 S to 71.50 N latitude.
+
+TL2009 in this document refers to metadata content inherited from the original U.S. Census Bureau (2009) TIGER/Line shapefile.
+
+TL2009: The TIGER/Line Shapefiles are an extract of selected geographic and cartographic information from the Census MAF/TIGER database. The Census MAF/TIGER database represents a seamless national file with no overlaps or gaps between parts. However, each TIGER/Line Shapefile is designed to stand alone as an independent dataset or the shapefiles can be combined to cover the whole nation.
+</abstract>
+<purpose>
+These polygons are provided as criteria for selecting georeferenced data from other databases. The precision of geographic searches in any system that employs these polygons will depend on the nature of the search algorithm.
+
+This information is not intended for navigational purposes.
+
+These data are intended for science researchers, students, policymakers, and the general public. The data can be used with geographic information systems (GIS) software to display geologic and oceanographic information.
+
+TL2009: In order for others to use the information in the Census MAF/TIGER database in a geographic information system (GIS) or for other geographic applications, the Census Bureau releases to the public extracts of the database in the form of TIGER/Line Shapefiles.
+</purpose>
+<supplinf>
+The U.S. Census Bureau publishes density, land-use, and socio-economic information at various geographic scales (national, state, territory). Information on coastal zone counties is increasingly important as human growth, development, and reliance increases on coastal resources. The Coastal Zone Management Act (CZMA) provides important information on the preservation, protection, and management of the nation's coastal resources (&lt;http://coastalmanagement.noaa.gov/czm/czm_act.html&gt;). Implemented through the NOAA/NOS Office of Ocean and Coastal Resource Management (OCRM), the Coastal Zone Management Program (CZMP) includes "those counties that are wholly or partially within the boundaries of a state's approved coastal management program" (&lt;http://coastalmanagement.noaa.gov/success/media/contextualindicatormanual.pdf&gt;).
+
+The attributes for the USGS product are adapted from the attributes for the Census Bureau product.
+
+U.S. Geological Survey (USGS) Spatial Extents for Marine Gazetteers project.
+
+Project leaders:
+
+Frances L. Lightsom, U.S. Geological Survey (USGS) Coastal and Marine Geology Program (CMGP), Woods Hole Coastal and Marine Science Center (flightsom@usgs.gov)
+
+Alan O. Allwardt, U.S. Geological Survey (USGS) Coastal and Marine Geology Program (CMGP), Pacific Coastal and Marine Science Center (aallwardt@usgs.gov)
+
+Project background:
+
+Gazetteers of terrestrial and marine regions, including the Geographic Names Information System (GNIS), GEOnet Names Server (GNS), GEBCO Gazetteer of Undersea Feature Names, and VLIZ Marine Gazetteer (VLIMAR), generally provide single-point locations or rectangular bounding boxes for named features, because the primary function of these gazetteers is to standardize geographic name usage. Many geospatial information services, however, would be improved if the authoritative place names from these gazetteers were associated with polygons representing the actual spatial extents of the features in question.
+
+The USGS Coastal and Marine Geology Program (CMGP) has created and compiled shapefiles to facilitate the retrieval of georeferenced information resources related to named oceans and seas, undersea features, coastal features and waterways, and relevant administrative areas including the U.S. Exclusive Economic Zone (EEZ) and Coastal Zone Management Program (CZMP) counties. Geospatial information systems with the capability for searching user-defined, polygonal geographic areas will be able to utilize these shapefiles or secondary products derived from them, such as well-known text (WKT) representations of the individual polygons within the shapefiles.
+
+CMGP and its collaborators would benefit from improvements in the gazetteers for these existing and planned geospatial information services:
+
+1. The CMGP Knowledge Management Project provides online geospatial search services for research data and scientific information (for example, CMG InfoBank and CMGDS). These geospatial search services currently employ simple map interfaces and/or gazetteers with rectangular bounding boxes for spatial extents.
+
+2. The internal USGS Geospatial Management Information System (GMIS) has a gazetteer with polygons for locating field studies on land, but it offers little aid for offshore searches, where many CMGP investigations are conducted.
+
+3. Information services for two interagency initiatives, marine planning (&lt;http://www.whitehouse.gov/administration/eop/oceans/cmsp&gt;) and the Ocean and Coastal Mapping (OCM) Inventory (&lt;http://iocm.noaa.gov/iwg/&gt;), are under development and could incorporate spatially enhanced coastal and marine gazetteers.
+
+In this context, the primary purpose of including spatial extents for the place names in a gazetteer is to assist information retrieval, rather than to establish precise boundaries.
+
+Planned project products, compiled for incorporation into gazetteers:
+
+1. Major ocean and sea boundaries (as defined by IHO and VLIMAR), incorporated into USGS gazetteers.
+
+2. Defined spatial extents for high-priority undersea features, incorporated into the GEBCO Gazetteer (in collaboration with Lisa A. Taylor and John C. Cartwright, NOAA/NGDC/MGGD).
+
+3. Spatial extents of named high-priority U.S. coastal features and waterways, incorporated into an authoritative gazetteer.
+
+4. Spatial extents of relevant U.S. administrative areas, including the Exclusive Economic Zone (EEZ), National Marine Sanctuaries, and Coastal Zone Management Program (CZMP) counties.
+
+Project results:
+
+The project will improve communication about coastal and marine activities, and enhance usability and interoperability of geospatial data services. The project will lay a foundation for future improvements by demonstrating formats and systems that can be used for incorporating additional spatial extents into marine gazetteers.
+
+Project outcome:
+
+People will be more successful in using familiar place names when they are looking for USGS projects and information, and other Federally funded geospatial information, about coastal and offshore features.
+
+Project objective:
+
+To generate a set of databases, in a standard format, that use polygons to define the spatial extents of named oceans and seas, undersea features, coastal features and waterways, and relevant administrative areas.
+
+Glossary of terms, acronyms, and abbreviations:
+&gt;ACUF           - U.S. BGN Advisory Committee on Undersea Features
+&gt;                     &lt;http://earth-info.nga.mil/gns/html/acuf.html&gt;
+&gt;BGN            - U.S. Board on Geographic Names
+&gt;                     &lt;http://geonames.usgs.gov/&gt;
+&gt;BODC           - British Oceanographic Data Centre
+&gt;                     &lt;http://www.bodc.ac.uk/&gt;
+&gt;CMG InfoBank   - USGS CMGP field activity and data catalog
+&gt;                     &lt;http://walrus.wr.usgs.gov/infobank/&gt;
+&gt;CMGDS          - USGS Coastal and Marine Geoscience Data System
+&gt;                     &lt;http://cmgds.marine.usgs.gov/&gt;
+&gt;CMGP           - USGS Coastal and Marine Geology Program
+&gt;                     &lt;http://marine.usgs.gov/&gt;
+&gt;GAZ            - gazetteer
+&gt;GEBCO          - General Bathymetric Chart of the Oceans
+&gt;                     &lt;http://www.gebco.net/&gt;
+&gt;GMIS           - USGS Geospatial Management Information System (USGS Intranet)
+&gt;GNIS           - Geographic Names Information System
+&gt;                     &lt;http://geonames.usgs.gov/pls/gnispublic/&gt;
+&gt;GNS            - GEOnet Names Server
+&gt;                     &lt;http://earth-info.nga.mil/gns/html/&gt;
+&gt;IHO            - International Hydrographic Organization
+&gt;                     &lt;http://www.iho.int/&gt;
+&gt;Linestring     - (aka polyline) an open graphic element composed of straight-line segments connected at the vertices.
+&gt;MAF/TIGER      - Master Address File/Topologically Integrated Geographic Encoding and Referencing (U.S. Census Bureau database)
+&gt;NGA            - National Geospatial-Intelligence Agency
+&gt;                     &lt;http://www.nga.mil/&gt;
+&gt;NOAA           - National Oceanic and Atmospheric Administration
+&gt;                     &lt;http://www.noaa.gov/&gt;
+&gt;NOAA/NGDC      - NOAA National Geophysical Data Center
+&gt;                     &lt;http://www.ngdc.noaa.gov/ngdc.html&gt;
+&gt;NOAA/NGDC/MGGD - NOAA/NGDC Marine Geology and Geophysics Division
+&gt;                     &lt;http://www.ngdc.noaa.gov/mggd.html&gt;
+&gt;NOAA/NOS       - NOAA National Ocean Service
+&gt;                     &lt;http://oceanservice.noaa.gov/&gt;
+&gt;NOAA/NOS/OCRM  - NOAA/NOS Office of Ocean and Coastal Resource Management
+&gt;                     &lt;http://oceanservice.noaa.gov/programs/ocrm/&gt;
+&gt;Polygon        - a closed graphic element composed of straight-line segments connected at the vertices.
+&gt;OCM Inventory  - Ocean and Coastal Mapping Inventory (of the Interagency Working Group on Ocean and Coastal Mapping)
+&gt;                     &lt;http://iocm.noaa.gov/iwg/&gt;
+&gt;SCUFN          - GEBCO Sub-Committee on Undersea Feature Names
+&gt;                     &lt;http://www.gebco.net/data_and_products/undersea_feature_names/&gt;
+&gt;Shapefile      - geospatial vector data format that describes geometries as points, linestrings, and polygons (see above). A single shapefile may contain multiple features of the same geometry (several individual polygons, for instance).
+&gt;UF             - undersea feature
+&gt;USGS           - U.S. Geological Survey
+&gt;                     &lt;http://www.usgs.gov/&gt;
+&gt;VLIMAR         - VLIZ Marine Gazetteer (now incorporated into Marine Regions website)
+&gt;                     &lt;http://www.marineregions.org/&gt;
+&gt;VLIZ           - Flanders Marine Institute
+&gt;                     &lt;http://www.vliz.be/en/intro&gt;
+&gt;WKT            - well-known text, a markup language for vector geometry objects
+&gt;                     &lt;http://en.wikipedia.org/wiki/Well-known_text&gt;
+</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>2009</caldate>
+</sngdate>
+</timeinfo>
+<current>ground condition</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>As needed</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-179.231086</westbc>
+<eastbc>179.859681</eastbc>
+<northbc>71.441059</northbc>
+<southbc>-14.601813</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>boundaries</themekey>
+<themekey>environment</themekey>
+<themekey>geoscientificInformation</themekey>
+<themekey>location</themekey>
+<themekey>oceans</themekey>
+<themekey>planningCadastre</themekey>
+<themekey>society</themekey>
+</theme>
+<theme>
+<themekt>none</themekt>
+<themekey>gazetteer</themekey>
+<themekey>coastal zone</themekey>
+</theme>
+<place>
+<placekt>INCITS.38-200x (R2004), INCITS.31-200x (R2007), INCITS.454-200x, INCITS 455-200x, INCITS 446-2008</placekt>
+<placekey>United States</placekey>
+<placekey>U.S.</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>
+This product provides polygons for coastal counties (and equivalent entities) as an aid in discovering online information about coastal and nearshore regions. This product is not an authoritative description of the counties currently included in the Coastal Zone Management Program (CZMP), although a 2009 list of CZMP counties was used to select the counties that are included. The current list of CZMP counties should be obtained directly from the NOAA/NOS Office of Ocean and Coastal Resource Management (OCRM).
+
+This information is not intended for navigational purposes.
+</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS) Coastal and Marine Geology Program (CMGP)</cntorg>
+<cntper>Frances L. Lightsom</cntper>
+</cntorgp>
+<cntpos>Supervisory Oceanographer</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, 384 Woods Hole Road</address>
+<city>Woods Hole</city>
+<state>MA</state>
+<postal>02543</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(508) 457-2242</cntvoice>
+<cntfax>(508) 457-2310</cntfax>
+<cntemail>flightsom@usgs.gov</cntemail>
+</cntinfo>
+</ptcontac>
+<browse>
+<browsen>&lt;http://pubs.usgs.gov/of/2013/1284/data/CZMP_counties_2009.gif&gt;</browsen>
+<browsed>browse graphic of CZMP counties shapefile</browsed>
+<browset>GIF</browset>
+</browse>
+</idinfo>
+<dataqual>
+<attracc>
+<attraccr>Accurate against Federal Information Processing Standards (FIPS), FIPS Publication 6-4, and FIPS-55 at the 100% level for the codes and base names. The remaining attribute information has been examined but has not been fully tested for accuracy.</attraccr>
+</attracc>
+<logic>
+Polygon topology present.
+
+TL2009: The Census Bureau performed automated tests to ensure logical consistency and limits of shapefiles. Segments making up the outer and inner boundaries of a polygon tie end-to-end to completely enclose the area. All polygons are tested for closure.
+
+The Census Bureau uses its internally developed geographic update system to enhance and modify spatial and attribute data in the Census MAF/TIGER database. Standard geographic codes, such as FIPS codes for states, counties, municipalities, county subdivisions, places, American Indian/Alaska Native/Native Hawaiian areas, and congressional districts are used when encoding spatial entities. The Census Bureau performed spatial data tests for logical consistency of the codes during the compilation of the original Census MAF/TIGER database files. Most of the codes for geographic entities except states, counties, urban areas, Core Based Statistical Areas (CBSAs), American Indian Areas (AIAs), and congressional districts were provided to the Census Bureau by the USGS, the agency responsible for maintaining FIPS 55. Feature attribute information has been examined but has not been fully tested for consistency.
+
+For the TIGER/Line Shapefiles, the Point and Vector Object Count for the G-polygon SDTS Point and Vector Object Type reflects the number of records in the shapefile attribute table. For multi-polygon features, only one attribute record exists for each multi-polygon rather than one attribute record per individual G-polygon component of the multi-polygon feature. TIGER/Line Shapefile multi-polygons are an exception to the G-polygon object type classification. Therefore, when multi-polygons exist in a shapefile, the object count will be less than the actual number of G-polygons.
+
+The TIGER/Line Shapefile products are not copyrighted, however TIGER/Line and Census TIGER are registered trademarks of the U.S. Census Bureau. These products are free to use in a product or publication, however acknowledgement must be given to the U.S. Census Bureau as the source. The boundary information in the TIGER/Line Shapefiles are for statistical data collection and tabulation purposes only; their depiction and designation for statistical purposes does not constitute a determination of jurisdictional authority or rights of ownership or entitlement and they are not legal land descriptions. Coordinates in the TIGER/Line shapefiles have six implied decimal places, but the positional accuracy of these coordinates is not as great as the six decimal places suggest.
+
+Additional aspects of the TIGER/Line shapefiles were clarified in a written communication from the U.S. Census Bureau to the USGS project leaders:
+
+"We refer to the seaward limit of water in the TIGER/Line shapefiles as the 3-mile limit. This 3-mile limit serves to define the outer limit of coverage by the MAF/TIGER database. Our 3-mile limit does not represent any sort of formal legal or administrative boundary and is not intended to define official limits for Federal programs or legal disputes even though it is often very similar to the Submerged Lands Act boundary. In most areas, our 3-mile limit is approximately 3 nautical miles out to sea (or ocean), and is similar (but not identical) to the old limit of the United States' territorial waters (before the limit of territorial waters changed from 3 to 12 nautical miles in 1988). While our 3-mile limit has not been substantially modified since the creation of our TIGER Database, we are currently looking into possible modifications/improvements for the future to make it more consistent with other Federal limits" (Geographic Products Branch, Geography Division, U.S. Census Bureau, written communication to Alan O. Allwardt dated 13 June 2011).
+
+USGS: This product provides polygons for coastal counties (and equivalent entities) as an aid in discovering online information about coastal and nearshore regions. This product is not an authoritative description of the counties currently included in the Coastal Zone Management Program (CZMP), although a 2009 list of CZMP counties was used to select the counties that are included. The current list of CZMP counties should be obtained directly from the NOAA/NOS Office of Ocean and Coastal Resource Management (OCRM).
+
+This information is not intended for navigational purposes.
+
+Read and fully comprehend the metadata prior to data use. Uses of these data should not violate the spatial resolution of the data. Where these data are used in combination with other data of different resolution, the resolution of the combined output will be limited by the lowest resolution of all the data.
+
+Acknowledge the U.S. Geological Survey (USGS) in products derived from these data. Share data products developed using these data with the U.S. Geological Survey.
+
+This dataset has been approved for release and publication by the Director of the USGS. Although this dataset has been subjected to rigorous review and is substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, it is released on condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.
+
+Although this Federal Geographic Data Committee-compliant metadata file is intended to document these data in nonproprietary form, as well as in ArcInfo format, this metadata file may include some ArcInfo-specific terminology.
+</logic>
+<complete>This dataset encompasses all of the Coastal Zone Management Program (CZMP) counties as defined in 2009,  including the data for Alaska, which later withdrew from the CZMP. Retention of the Alaska data enhances the search capability that is the primary focus of this compilation. Data completeness of the TIGER/Line Shapefiles reflects the contents of the Census MAF/TIGER database at the time the TIGER/Line Shapefiles were created.</complete>
+<lineage>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>U.S. Census Bureau</origin>
+<pubdate>2008</pubdate>
+<title>TIGER/Line Shapefile, 2008, nation, U.S., County and Equivalent (tl_2008_us_county.shp)</title>
+<edition>Aug 2009 download</edition>
+<geoform>vector digital data</geoform>
+<onlink>&lt;http://www2.census.gov/geo/tiger/TIGER2008/tl_2008_us_county.zip&gt;</onlink>
+</citeinfo>
+</srccite>
+<typesrc>online</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>2008</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>publication date</srccurr>
+</srctime>
+<srccitea>U.S. Census Bureau, 2008</srccitea>
+<srccontr>county shapefile</srccontr>
+</srcinfo>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>U.S. Census Bureau</origin>
+<pubdate>2009</pubdate>
+<title>TIGER/Line Shapefile, 2009, nation, U.S., Current county and Equivalent National Shapefile (tl_2009_us_county.shp)</title>
+<edition>May 2011 download</edition>
+<geoform>vector digital data</geoform>
+<onlink>&lt;http://www2.census.gov/geo/tiger/TIGER2009/tl_2009_us_county.zip&gt;</onlink>
+</citeinfo>
+</srccite>
+<typesrc>online</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>2009</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>publication date</srccurr>
+</srctime>
+<srccitea>U.S. Census Bureau, 2009</srccitea>
+<srccontr>county shapefile</srccontr>
+</srcinfo>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>National Oceanic and Atmospheric Administration, National Ocean Service, Office of Ocean and Coastal Resource Management</origin>
+<pubdate>2009</pubdate>
+<title>Coastal Zone Management Act Performance Measurement System: Contextual Indicators Manual (working document)</title>
+<edition>Sep 2009</edition>
+<geoform>document</geoform>
+<othercit>downloaded March 2010</othercit>
+<onlink>&lt;http://coastalmanagement.noaa.gov/success/media/contextualindicatormanual.pdf&gt;</onlink>
+</citeinfo>
+</srccite>
+<typesrc>online</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>2009</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>publication date</srccurr>
+</srctime>
+<srccitea>NOAA/NOS/OCRM, 2009</srccitea>
+<srccontr>Appendix A: Counties within the Coastal Zone</srccontr>
+</srcinfo>
+<srcinfo>
+<srccite>
+<citeinfo>
+<origin>U.S. Census Bureau</origin>
+<pubdate>Unknown</pubdate>
+<title>Substantial Changes to Counties and County Equivalent Entities: 1970-Present</title>
+<edition>2010 download</edition>
+<geoform>document</geoform>
+<onlink>&lt;http://www.census.gov/geo/reference/county-changes.html&gt;</onlink>
+</citeinfo>
+</srccite>
+<typesrc>online</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>Unknown</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>publication date</srccurr>
+</srctime>
+<srccitea>U.S. Census Bureau, undated</srccitea>
+<srccontr>list of added or deleted counties, boundary changes, and name changes</srccontr>
+</srcinfo>
+<procstep>
+<procdesc>
+Wingfield identified 491 CZMP counties and county equivalents, represented by 500 polygons, using a three-step process: 1) the 2008 TIGER/Line shapefile (U.S. Census Bureau, 2008) provided shapefile information for all counties and county equivalents in the 50 states, District of Columbia, and U.S. territories; 2) Appendix A of the Coastal Zone Management Act Performance Measurement System: Contextual Indicators Manual (NOAA/NOS/OCRM, 2009) was used to create a subset of the TIGER/Line shapefile for CZMP counties and county equivalents; and 3) this subset was reconciled as necessary with Substantial Changes to Counties and County Equivalent Entities: 1970-Present (U.S. Census Bureau, undated).
+
+Hartwell updated the CZMP counties shapefile to conform with the 2009 TIGER/Line shapefile (U.S. Census Bureau, 2009) by using the ArcGIS "select by location" command: the 2009 TIGER/Line polygons were selected if their centroids were contained within one of the polygons of the 2008 CZMP counties shapefile; all other polygons within the 2009 TIGER/Line shapefile were eliminated, thus producing an updated CZMP counties shapefile (now with 492 CZMP counties and county equivalents, represented by 501 polygons).
+
+Subsequent changes in CZMP participation (for example, the voluntary withdrawal of Alaska in 2011) are not reflected in the shapefile.
+</procdesc>
+<procdate>2009-2011</procdate>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>G-polygon</sdtstype>
+<ptvctcnt>501</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.000458</latres>
+<longres>0.000458</longres>
+<geogunit>Decimal degrees</geogunit>
+</geograph>
+<geodetic>
+<horizdn>North American Datum of 1983</horizdn>
+<ellips>Geodetic Reference System 80</ellips>
+<semiaxis>6378137</semiaxis>
+<denflat>298.257</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>CZMP_counties_2009.shp</enttypl>
+<enttypd>TL2009: Current County and Equivalent National</enttypd>
+<enttypds>TL2009: U.S. Census Bureau</enttypds>
+</enttyp>
+<attr>
+<attrlabl>FID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Sequential unique whole numbers that are automatically generated.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Coordinates defining the features.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>STATEFP</attrlabl>
+<attrdef>Current state Federal Information Processing Standards (FIPS) code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS.38-200x (R2004), Codes for the Identification of the States, the District of Columbia, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 5-2)</codesetn>
+<codesets>U.S. Census Bureau</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>COUNTYFP</attrlabl>
+<attrdef>Current county Federal Information Processing Standards (FIPS) code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS.31-200x (R2007), Codes for the Identification of the Counties and Equivalent Areas of the United States, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 6-4)</codesetn>
+<codesets>U.S. Census Bureau</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>COUNTYNS</attrlabl>
+<attrdef>Current county ANSI code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS 446-2008, (GNIS) Identifying Attributes for Named Physical and Cultural Geographic Features (Except Roads and Highways) of the United States, Its Territories, Outlying Areas, and Freely Associated Areas, and the Waters of the Same to the Limit of the Twelve-Mile Statutory Zone</codesetn>
+<codesets>U.S. Geological Survey (USGS)</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>CNTYIDFP</attrlabl>
+<attrdef>Current county identifier; a concatenation of current state Federal Information Processing Standards (FIPS) code and county FIPS code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS.38-200x (R2004), Codes for the Identification of the States, the District of Columbia, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 5-2), INCITS.31-200x (R2007), Codes for the Identification of the Counties and Equivalent Areas of the United States, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 6-4)</codesetn>
+<codesets>U.S. Census Bureau</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>NAME</attrlabl>
+<attrdef>Current county name</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS.31-200x (R2007), Codes for the Identification of the Counties and Equivalent Areas of the United States, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 6-4)</codesetn>
+<codesets>U.S. Census Bureau</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>NAMELSAD</attrlabl>
+<attrdef>Current name and the translated legal/statistical area description for county</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<codesetd>
+<codesetn>INCITS.31-200x (R2007), Codes for the Identification of the Counties and Equivalent Areas of the United States, Puerto Rico, and the Insular Areas of the United States (Formerly FIPS 6-4) and the translated legal/statistical area description code for county that appears in LSAD00</codesetn>
+<codesets>U.S. Census Bureau</codesets>
+</codesetd>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>LSAD</attrlabl>
+<attrdef>Current legal/statistical area description code for county</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<edom>
+<edomv>00</edomv>
+<edomvd>Blank</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>03</edomv>
+<edomvd>City and Borough</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>04</edomv>
+<edomvd>Borough</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>05</edomv>
+<edomvd>Census Area</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>06</edomv>
+<edomvd>County</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>07</edomv>
+<edomvd>District</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>10</edomv>
+<edomvd>Island</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>12</edomv>
+<edomvd>Municipality</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>13</edomv>
+<edomvd>Municipio</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>15</edomv>
+<edomvd>Parish</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>25</edomv>
+<edomvd>city</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>CLASSFP</attrlabl>
+<attrdef>Current Federal Information Processing Standards (FIPS) 55 class code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<edom>
+<edomv>C7</edomv>
+<edomvd>An incorporated place that is independent of any county</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>H1</edomv>
+<edomvd>An active county or equivalent feature</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>H4</edomv>
+<edomvd>An inactive county or equivalent feature</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>H5</edomv>
+<edomvd>A statistical county equivalent feature</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>H6</edomv>
+<edomvd>A county that is coextensive with an incorporated place, part of an incorporated place, or a consolidated city and the governmental functions of the county are part of the municipal government</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>MTFCC</attrlabl>
+<attrdef>MAF/TIGER feature class code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<edom>
+<edomv>G4020</edomv>
+<edomvd>County or Equivalent Feature</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>CSAFP</attrlabl>
+<attrdef>Current combined statistical area code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<rdom>
+<rdommin>100</rdommin>
+<rdommax>599</rdommax>
+</rdom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>CBSAFP</attrlabl>
+<attrdef>Current metropolitan statistical area/micropolitan statistical area code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<rdom>
+<rdommin>10000</rdommin>
+<rdommax>49999</rdommax>
+</rdom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>METDIVFP</attrlabl>
+<attrdef>Current metropolitan division code</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<rdom>
+<rdommin>10004</rdommin>
+<rdommax>49994</rdommax>
+</rdom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>FUNCSTAT</attrlabl>
+<attrdef>Current functional status</attrdef>
+<attrdefs>U.S. Census Bureau</attrdefs>
+<attrdomv>
+<edom>
+<edomv>A</edomv>
+<edomvd>Active government providing primary general-purpose functions</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>B</edomv>
+<edomvd>Active government that is partially consolidated with another government but with separate officials providing primary general-purpose functions</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>C</edomv>
+<edomvd>Active government consolidated with another government with a single set of officials</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>F</edomv>
+<edomvd>Fictitious Entity created to fill the Census Bureau geographic hierarchy</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>G</edomv>
+<edomvd>Active government that is subordinate to another unit of government</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>N</edomv>
+<edomvd>Nonfunctioning legal entity</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+<attrdomv>
+<edom>
+<edomv>S</edomv>
+<edomvd>Statistical Entity</edomvd>
+<edomvds>U.S. Census Bureau</edomvds>
+</edom>
+</attrdomv>
+</attr>
+</detailed>
+<overview>
+<eaover>CZMP county polygon feature attributes from U.S. Census Bureau (2009) CZMP counties as defined in NOAA (accessed 2009).</eaover>
+<eadetcit>U.S. Census Bureau, 2009 TIGER/Line Shapefiles Technical Documentation (&lt;http://www.census.gov/geo/maps-data/data/pdfs/tiger/tgrshp2009/TGRSHP09.pdf&gt;)</eadetcit>
+<eadetcit>NOAA, Coastal Zone Management Program (CZMP) overview (&lt;http://coastalmanagement.noaa.gov/programs/czm.html&gt;)</eadetcit>
+</overview>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS) Coastal and Marine Geology Program (CMGP)</cntorg>
+<cntper>Frances L. Lightsom</cntper>
+</cntorgp>
+<cntpos>Supervisory Oceanographer</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, 384 Woods Hole Road</address>
+<city>Woods Hole</city>
+<state>MA</state>
+<postal>02543</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(508) 457-2242</cntvoice>
+<cntfax>(508) 457-2310</cntfax>
+<cntemail>flightsom@usgs.gov</cntemail>
+</cntinfo>
+</distrib>
+<resdesc>USGS OFR 2013-1284</resdesc>
+<distliab>
+TL2009: No warranty, expressed or implied is made with regard to the accuracy of these data, and no liability is assumed by the U.S. Government in general or the U.S. Census Bureau in specific as to the spatial or attribute accuracy of the data. The act of distribution shall not constitute any such warranty and no responsibility is assumed by the U.S. government in the use of these files. The boundary information in the TIGER/Line Shapefiles is for statistical data collection and tabulation purposes only; their depiction and designation for statistical purposes do not constitute a determination of jurisdictional authority or rights of ownership or entitlement and they are not legal land descriptions.
+
+USGS:
+
+This dataset has been approved for release and publication by the Director of the U.S. Geological Survey (USGS). Although this dataset has been subjected to rigorous review and is substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, it is released on condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use.
+
+Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof.
+</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>shapefile</formname>
+<formcont>Coastal county boundaries with attributes from the original TIGER data file.</formcont>
+<filedec>unzip</filedec>
+<transize>18.6 MB</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>&lt;http://pubs.usgs.gov/of/2013/1284/data/CZMP_counties_2009.zip&gt;</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>none</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20131204</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS) Coastal and Marine Geology Program (CMGP)</cntorg>
+<cntper>Frances L. Lightsom</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, 384 Woods Hole Road</address>
+<city>Woods Hole</city>
+<state>MA</state>
+<postal>02543</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(508) 457-2242</cntvoice>
+<cntfax>(508) 457-2310</cntfax>
+<cntemail>flightsom@usgs.gov</cntemail>
+</cntinfo>
+</metc>
+<metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+</metainfo>
+</metadata>

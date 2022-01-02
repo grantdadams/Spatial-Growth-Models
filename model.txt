@@ -1,0 +1,60 @@
+model{
+for(i in 1:n){
+y[i] ~ dnorm(y.hat[i], tau.y)T(selectivity[i],)
+
+# von Bertalanffy growth function
+y.hat[i] <- Linf.hat[i] * (1-exp(-k.hat[i] * (age[i] -  t0.hat[i])))
+# Extended parameters to account for sex differences
+# 0 indicates females and 1- indicates males
+Linf.hat[i] <- (Linf[g[i]] + B_Linf * sex[i])
+k.hat[i] <- (k[g[i]] + B_k * sex[i])
+t0.hat[i] <- (t0[g[i]] + B_t0 * sex[i])
+}
+
+tau.y <- pow(sigma,-2)
+sigma ~ dunif(0,100)
+
+# Fishery-dependent B priors
+B_Linf ~ dnorm(0,0.001)
+B_k ~ dnorm(0,0.001)
+B_t0 ~ dnorm(0,0.001)
+
+# Level-1 parameters
+# State- and sex-specific parameters
+for(j in 1:J){
+Linf[j] <- exp(Log_Linf[j])
+k[j] <- exp(Log_k[j]) # log-scale
+t0[j] <- exp(Log_t0[j])-10 # A constant of 10 is added (subtracted)
+}
+
+# CAR Model
+Log_Linf ~ dmnorm(rep(B0_Linf_log,J),  tau_Linf * (D - phi_Linf * W))
+Log_k ~ dmnorm(rep(B0_k_log,J),  tau_k * (D - phi_k * W))
+Log_t0 ~ dmnorm(rep(B0_t0_log,J),  tau_t0 * (D - phi_t0 * W))
+
+
+
+# Priors for hyperparameters
+# VBGF intercepts
+B0_Linf_log ~ dnorm(0,0.0001)
+B0_k_log ~ dnorm(0,0.0001)
+B0_t0_log ~ dnorm(0,0.0001)
+
+tau_Linf ~ dgamma(2,2)
+tau_k ~ dgamma(2,2)
+tau_t0 ~ dgamma(2,2)
+
+sigma2_Linf <- 1/tau_Linf^2
+sigma2_k <- 1/tau_k^2
+sigma2_t0 <- 1/tau_t0^2
+
+phi_Linf ~ dunif(-0.99, 0.99)
+phi_k ~ dunif(-0.99, 0.99)
+phi_t0 ~ dunif(-0.99, 0.99)
+
+# Get grand mean of parameters on untransformed scale
+# Mean VBGF intercepts
+B0_Linf <- exp( B0_Linf_log)
+B0_k <- exp( B0_k_log) # log-scale
+B0_t0 <- exp( B0_t0_log)-10 # A constant of 10 is added (subtracted)
+}
