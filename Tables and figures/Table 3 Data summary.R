@@ -1,6 +1,6 @@
 library(tidyr)
 
-source("VGBM Data Prep/VGBM_Data_Prep.R")
+source("Data/Data prep/VBGM_Data_prep.R")
 
 # Sample size
 summ_stat <- data.frame(table(dat$state_no, dat$sex))

@@ -4,14 +4,13 @@ rm(list = ls(all = T))
 library(rstan)
 
 ##### RE AD AND PREPARE DATA #####
-source("Weight_at_length_data_prep_v2_clean_v2.R")
-prev_coefs <- read.csv("WAL_Prev_Param_Estimates.csv")
+source("Data/Data prep/WAL_Data_prep.R")
 
 # Load data
-load("StanFitLatRElog_short_2018_03_31.RData")
+load("Stan models/Models/WAL_Stan_models_2018_02_19.RData")
 
 # Get parameters
-model <- StanFitLatRElog
+model <- mod_list[[2]]
 mod_summ <- data.frame(summary(model)[[1]])
 mod_summ$parameter <- rownames(mod_summ)
 
@@ -31,7 +30,7 @@ lat_lon_df$Lat <- (lat_lon_df$Lat - min(lat_lon_df$Lat))
 
 state.id <- data.frame(state = c("VA Ocean","VA Bay","NC","SC","FL Atlantic","FL Gulf","AL","MS"), state_no_check = state_no_df$state_no_check, state_no = state_no_df$state_no)
 
-parameters_to_save <- c(paste("Betas_log_a[",1:3,"]", sep = ""), paste("Betas_log_b[",1:3,"]", sep = ""), "sigma_a", "sigma_b", "sigma", paste("log_a_re[",c(1:8), "]", sep = ""), paste("log_b_re[",c(1:8), "]", sep = ""))
+parameters_to_save <- c(paste("B_log_a[",1:3,"]", sep = ""), paste("B_log_b[",1:3,"]", sep = ""), "sigma_a", "sigma_b", "sigma", paste("log_a_re[",c(1:8), "]", sep = ""), paste("log_b_re[",c(1:8), "]", sep = ""))
 draws <- draws[,which(colnames(draws) %in% parameters_to_save)]
 # This code creates a to illustrate the 95% and 80% credible intervals of parameter estimates from a hierarchical weight-at-length power equation following Midway et al. 2015
 library(matrixStats)
@@ -62,12 +61,12 @@ for(j in 1:8){
     state_ind <- c(state_no_df$state_no_check)[j] # Indexing variable
     
     log_a_re <- draws[,paste("log_a_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_a_re <- draws[,paste("Betas_log_a[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_a_re <- draws[,paste("B_log_a[",1:3,"]", sep = "")] # Subset the mcmc chains
     a.sub <- exp(as.matrix(betas_a_re) %*% as.vector(c(1, i - 1, lat_lon_df[which(lat_lon_df$state_no_check == state_ind),2])) + log_a_re)
     a.all <- c(a.all, a.sub)
     
     log_b_re <- draws[,paste("log_b_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_b_re <- draws[,paste("Betas_log_b[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_b_re <- draws[,paste("B_log_b[",1:3,"]", sep = "")] # Subset the mcmc chains
     b.sub <- exp(as.matrix(betas_b_re) %*% as.vector(c(1, i - 1, lat_lon_df[which(lat_lon_df$state_no_check == state_ind),2])) + log_b_re)
     b.all <- c(b.all, b.sub)
   }
@@ -90,11 +89,11 @@ for(m in length.all){
       
       # Get parameters
       log_a_re <- draws[,paste("log_a_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-      betas_a_re <- draws[,paste("Betas_log_a[",1:3,"]", sep = "")] # Subset the mcmc chains
+      betas_a_re <- draws[,paste("B_log_a[",1:3,"]", sep = "")] # Subset the mcmc chains
       a.sub <- exp(as.matrix(betas_a_re) %*% as.vector(c(1, i - 1, lat_lon_df[which(lat_lon_df$state_no_check == state_ind),2])) + log_a_re)
       
       log_b_re <- draws[,paste("log_b_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-      betas_b_re <- draws[,paste("Betas_log_b[",1:3,"]", sep = "")] # Subset the mcmc chains
+      betas_b_re <- draws[,paste("B_log_b[",1:3,"]", sep = "")] # Subset the mcmc chains
       b.sub <- exp(as.matrix(betas_b_re) %*% as.vector(c(1, i - 1, lat_lon_df[which(lat_lon_df$state_no_check == state_ind),2])) + log_b_re)
       
       pred.weight <- a.sub * m ^ b.sub 

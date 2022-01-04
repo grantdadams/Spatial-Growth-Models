@@ -1,9 +1,9 @@
 ##### READ AND PREPARE DATA #####
-source("VGBM Data Prep/VGBM_Data_Prep.R")
-prev_coefs <- read.csv("VBGF_Coefs_Previous_Studies.csv")
+source("Data/Data prep/VBGM_Data_prep.R")
+prev_coefs <- read.csv("Data/VBGF_Coefs_Previous_Studies.csv")
 
 # Load model
-load("3_vbgf_model_progression_2018_04_01.RData")
+load("VBGF_Stan_models_2018_04_01.RData")
 
 # Get parameters
 model <- mod_list[[2]]

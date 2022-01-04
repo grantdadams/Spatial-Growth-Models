@@ -1,10 +1,11 @@
 library(rstan)
 
-##### RE AD AND PREPARE DATA #####
-source("VGBM Data Prep/VGBM_Data_Prep.R")
+##### READ AND PREPARE DATA #####
+source("Data/Data prep/VBGM_Data_prep.R")
+prev_coefs <- read.csv("Data/VBGF_Coefs_Previous_Studies.csv")
 
-# Load data
-load("3_vbgf_model_progression_2018_04_01.RData")
+# Load model
+load("VBGF_Stan_models_2018_04_01.RData")
 
 # Get parameters
 model <- mod_list[[2]]
@@ -13,7 +14,7 @@ mod_summ$parameter <- rownames(mod_summ)
 
 # Subset what we want
 mod_summ <- mod_summ[,c("parameter","mean","X50.", "X2.5.", "X97.5.", "n_eff" , "Rhat")]
-parameters_to_save <- c(paste("log_linf_re[",c(1:4,6:11), "]", sep = ""), paste("log_k_re[",c(1:4,6:11), "]", sep = ""), paste("t0_re[",c(1:4,6:11), "]", sep = ""), paste("Betas_log_linf[",1:3,"]", sep = ""), paste("Betas_log_k[",1:3,"]", sep = ""), paste("Betas_t0[",1:3,"]", sep = ""), "sigma_linf", "sigma_k", "sigma_t0", "sigma")
+parameters_to_save <- c(paste("log_linf_re[",c(1:4,6:11), "]", sep = ""), paste("log_k_re[",c(1:4,6:11), "]", sep = ""), paste("t0_re[",c(1:4,6:11), "]", sep = ""), paste("B_log_linf[",1:3,"]", sep = ""), paste("B_log_k[",1:3,"]", sep = ""), paste("B_t0[",1:3,"]", sep = ""), "sigma_linf", "sigma_k", "sigma_t0", "sigma")
 mod_summ_sub <- mod_summ[which(mod_summ$parameter %in% parameters_to_save),]
 mod_summ_sub$sex <- "NA"
 mod_summ_sub$state_no <- "NA"
@@ -45,7 +46,7 @@ f_linf_df$order <- "NA"
 
 for(i in c(1:4,6:11)){
   log_linf_re <- draws[,paste("log_linf_re[",i,"]", sep = "")]
-  betas_linf_re <- draws[,paste("Betas_log_linf[",1:3,"]", sep = "")]
+  betas_linf_re <- draws[,paste("B_log_linf[",1:3,"]", sep = "")]
   
   F_Linf <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, 0, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_linf_re)
   M_Linf <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, 1, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_linf_re)
@@ -85,7 +86,7 @@ m_k_df$order <- "NA"
 
 for(i in c(1:4,6:11)){
   log_k_re <- draws[,paste("log_k_re[",i,"]", sep = "")]
-  betas_k_re <- draws[,paste("Betas_log_k[",1:3,"]", sep = "")]
+  betas_k_re <- draws[,paste("B_log_k[",1:3,"]", sep = "")]
   
   F_k <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, 0, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_k_re)
   M_k <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, 1, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_k_re)
@@ -125,7 +126,7 @@ m_t0_df$order <- "NA"
 
 for(i in c(1:4,6:11)){
   log_t0_re <- draws[,paste("t0_re[",i,"]", sep = "")]
-  betas_t0_re <- draws[,paste("Betas_t0[",1:3,"]", sep = "")]
+  betas_t0_re <- draws[,paste("B_t0[",1:3,"]", sep = "")]
   
   F_t0 <- (as.matrix(betas_t0_re) %*% as.vector(c(1, 0, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_t0_re)
   M_t0 <- (as.matrix(betas_t0_re) %*% as.vector(c(1, 1, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_t0_re)
@@ -168,14 +169,14 @@ f_w_df$order <- "NA"
 for(i in c(1:4,6:11)){
   # Get linf
   log_linf_re <- draws[,paste("log_linf_re[",i,"]", sep = "")]
-  betas_linf_re <- draws[,paste("Betas_log_linf[",1:3,"]", sep = "")]
+  betas_linf_re <- draws[,paste("B_log_linf[",1:3,"]", sep = "")]
   
   F_Linf <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, 0, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_linf_re)
   M_Linf <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, 1, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_linf_re)
   
   # Get k
   log_k_re <- draws[,paste("log_k_re[",i,"]", sep = "")]
-  betas_k_re <- draws[,paste("Betas_log_k[",1:3,"]", sep = "")]
+  betas_k_re <- draws[,paste("B_log_k[",1:3,"]", sep = "")]
   
   F_k <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, 0, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_k_re)
   M_k <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, 1, lat_lon_df[which(lat_lon_df$state_no == i),2])) + log_k_re)

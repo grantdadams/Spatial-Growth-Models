@@ -42,7 +42,7 @@ for ( j in 1:length(unique(dat$state))){
     
     # Get parameters
     log_linf_re <- draws[,paste("log_linf_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_linf_re <- draws[,paste("Betas_log_linf[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_linf_re <- draws[,paste("B_log_linf[",1:3,"]", sep = "")] # Subset the mcmc chains
     
     dat.sub <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_linf_re)
     quantiles_025_975 <- quantile(dat.sub,c(0.025, 0.975))
@@ -78,7 +78,7 @@ for ( j in 1:length(unique(dat$state))){
     
     # Get parameters
     log_linf_re <- draws[,paste("log_k_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_linf_re <- draws[,paste("Betas_log_k[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_linf_re <- draws[,paste("B_log_k[",1:3,"]", sep = "")] # Subset the mcmc chains
     
     dat.sub <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_linf_re)
     quantiles_025_975 <- quantile(dat.sub,c(0.025, 0.975))
@@ -114,7 +114,7 @@ for ( j in 1:length(unique(dat$state))){
     
     # Get parameters
     log_linf_re <- draws[,paste("t0_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_linf_re <- draws[,paste("Betas_t0[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_linf_re <- draws[,paste("B_t0[",1:3,"]", sep = "")] # Subset the mcmc chains
     
     dat.sub <- (as.matrix(betas_linf_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_linf_re)
     quantiles_025_975 <- quantile(dat.sub,c(0.025, 0.975))
@@ -151,13 +151,13 @@ for ( j in 1:length(unique(dat$state))){
     
     # Get linf
     log_linf_re <- draws[,paste("log_linf_re[",state_ind,"]", sep = "")]
-    betas_linf_re <- draws[,paste("Betas_log_linf[",1:3,"]", sep = "")]
+    betas_linf_re <- draws[,paste("B_log_linf[",1:3,"]", sep = "")]
     
     Linf <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_linf_re)
 
     # Get k
     log_k_re <- draws[,paste("log_k_re[",state_ind,"]", sep = "")]
-    betas_k_re <- draws[,paste("Betas_log_k[",1:3,"]", sep = "")]
+    betas_k_re <- draws[,paste("B_log_k[",1:3,"]", sep = "")]
     
     k <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_k_re)
    

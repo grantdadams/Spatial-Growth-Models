@@ -1,7 +1,7 @@
 library(rstan)
 
 ##### RE AD AND PREPARE DATA #####
-source("Weight_at_length_data_prep.R")
+source("Data/Data prep/WAL_Data_prep.R")
 ################################################
 # reorder state variables
 state_no_df <- subset(dat, !duplicated(state_no_check))
@@ -10,7 +10,7 @@ state_no_df <- state_no_df[order(state_no_df$state_no),]
 state_no_df$state_no_2 <- 1:8
 
 # Load data
-load("StanFitLatRElog_2018_02_19.RData")
+load("Stan models/Models/WAL_Stan_models_2018_02_19.RData")
 
 # Get parameters
 model <- StanFitLatRElog

@@ -1,9 +1,9 @@
 ##### READ AND PREPARE DATA #####
-source("VGBM Data Prep/VGBM_Data_Prep.R")
-prev_coefs <- read.csv("VBGF_Coefs_Previous_Studies.csv")
+source("Data/Data prep/VBGM_Data_prep.R")
+prev_coefs <- read.csv("Data/VBGF_Coefs_Previous_Studies.csv")
 
 # Load model
-load("3_vbgf_model_progression_2018_04_01.RData")
+load("VBGF_Stan_models_2018_04_01.RData")
 
 # Get parameters
 model <- mod_list[[2]]
@@ -33,17 +33,17 @@ for(j in 1:10){
     state_ind <- c(1:4,6:11)[j] # Indexing variable
     
     log_linf_re <- draws[,paste("log_linf_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_linf_re <- draws[,paste("Betas_log_linf[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_linf_re <- draws[,paste("B_log_linf[",1:3,"]", sep = "")] # Subset the mcmc chains
     linf.sub <- exp(as.matrix(betas_linf_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_linf_re)
     linf.all[[i]][,j] <- linf.sub
     
     log_k_re <- draws[,paste("log_k_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_k_re <- draws[,paste("Betas_log_k[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_k_re <- draws[,paste("B_log_k[",1:3,"]", sep = "")] # Subset the mcmc chains
     k.sub <- exp(as.matrix(betas_k_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_k_re)
     k.all[[i]][,j] <- k.sub
     
     log_t0_re <- draws[,paste("t0_re[",state_ind,"]", sep = "")] # Subset the mcmc chains
-    betas_t0_re <- draws[,paste("Betas_t0[",1:3,"]", sep = "")] # Subset the mcmc chains
+    betas_t0_re <- draws[,paste("B_t0[",1:3,"]", sep = "")] # Subset the mcmc chains
     t0.sub <- (as.matrix(betas_t0_re) %*% as.vector(c(1, i-1, lat_lon_df[which(lat_lon_df$state_no == state_ind),2])) + log_t0_re)
     t0.all[[i]][,j] <- t0.sub
     
